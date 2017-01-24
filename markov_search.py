@@ -14,6 +14,7 @@ import markovify
 import random
 import re
 import os
+import sys
 from py_ms_cognitive import PyMsCognitiveImageSearch
 import pytumblr
 
@@ -94,10 +95,9 @@ def send_result(toJoin,s):
 		print(" ")
 		client.create_photo('computerfreud', state="published", tags=["computer","freud","bot",search_term], caption=s, source=image_url)
 		print("sent to tumblr")
+		sys.exit()
 	except Exception as e:
 		print 'Exception occurred, value:', e
-
-
 
 make_sentence("rt.txt")
 
