@@ -18,7 +18,7 @@ import sys
 from py_ms_cognitive import PyMsCognitiveImageSearch
 import pytumblr
 
-"""
+
 consumer_key =  os.environ['consumer_key']
 consumer_secret = os.environ['consumer_secret']
 token_key = os.environ['token_key']
@@ -31,7 +31,7 @@ client = pytumblr.TumblrRestClient(
     token_key,
     token_secret
 )
-"""
+
 
 def make_sentence(txt):
 	""" Yes I'm using a markov generator because I am lazy. Feed it a lot of text. """
