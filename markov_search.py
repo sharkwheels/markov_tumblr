@@ -93,8 +93,10 @@ def send_result(toJoin,s):
 		print(s)
 		print(" ")
 		client.create_photo('computerfreud', state="published", tags=["computer","freud","bot",search_term], caption=s, source=image_url)
+		print("sent to tumblr")
 	except Exception as e:
 		print 'Exception occurred, value:', e
+
 
 
 make_sentence("rt.txt")
