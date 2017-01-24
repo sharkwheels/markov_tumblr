@@ -45,7 +45,7 @@ def make_sentence(txt):
 
 	# print a short scentence under 200 characters
 	for i in range(1):
-		s = text_model.make_short_sentence(200)
+		s = text_model.make_short_sentence(140)
 		su = re.sub(r'[^\w\s]','',s)
 		print(su)
 		grab_words(su.lower())
