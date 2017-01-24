@@ -18,6 +18,7 @@ import sys
 from py_ms_cognitive import PyMsCognitiveImageSearch
 import pytumblr
 
+"""
 consumer_key =  os.environ['consumer_key']
 consumer_secret = os.environ['consumer_secret']
 token_key = os.environ['token_key']
@@ -30,7 +31,7 @@ client = pytumblr.TumblrRestClient(
     token_key,
     token_secret
 )
-
+"""
 
 def make_sentence(txt):
 	""" Yes I'm using a markov generator because I am lazy. Feed it a lot of text. """
@@ -42,10 +43,9 @@ def make_sentence(txt):
 	# Build the model.
 	text_model = markovify.Text(text)
 
-	# Print five randomly-generated sentences
+	# print a short scentence under 200 characters
 	for i in range(1):
-		#print(text_model.make_sentence(10))
-		s = text_model.make_short_sentence(100)
+		s = text_model.make_short_sentence(200)
 		su = re.sub(r'[^\w\s]','',s)
 		print(su)
 		grab_words(su.lower())
@@ -73,8 +73,10 @@ def grab_words(s):
 
 	scrubbed_words = [x for x in words if x not in not_words]
 	print(scrubbed_words)
+
 	final_word = random.choice(scrubbed_words)
 	final_word_second = random.choice(scrubbed_words)
+
 	final_term = [final_word,final_word_second]
 	
 	send_result(final_term,s)
